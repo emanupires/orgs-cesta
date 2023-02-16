@@ -1,17 +1,12 @@
-import { Image, StyleSheet, Dimensions, Text, View } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 
-import TextRegular from "../components/TextRegular";
+import farm from "../../../../assets/logo.png";
 
-import header from "../../assets/topo.png";
-import farm from "../../assets/logo.png";
+import TextRegular from "../../../components/TextRegular";
 
-const width = Dimensions.get("screen").width;
-
-export default function Basket() {
+export default function Details() {
   return (
     <>
-      <Image source={header} style={styles.header} />
-      <TextRegular style={styles.title}>Detalhes da cesta</TextRegular>
       <View style={styles.basket}>
         <TextRegular style={styles.name}>Cesta de Verduras</TextRegular>
         <View style={styles.farm}>
@@ -29,21 +24,6 @@ export default function Basket() {
 }
 
 const styles = StyleSheet.create({
-  header: {
-    // altura da imagem / largura da imagem * width (dimensions)
-    height: (578 / 768) * width,
-    width: "100%",
-  },
-  title: {
-    color: "#FFF",
-    fontSize: 16,
-    fontWeight: "bold",
-    lineHeight: 26,
-    padding: 16,
-    position: "absolute",
-    textAlign: "center",
-    width: "100%",
-  },
   name: {
     color: "#464646",
     fontSize: 26,
