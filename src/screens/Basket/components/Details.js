@@ -1,24 +1,28 @@
-import { Image, StyleSheet, View } from "react-native";
-
-import farm from "../../../../assets/logo.png";
+import { Image, StyleSheet, View, TouchableOpacity } from "react-native";
 
 import TextRegular from "../../../components/TextRegular";
 
-export default function Details() {
+export default function Details({
+  name,
+  farmLogo,
+  farmName,
+  description,
+  price,
+  buttonText,
+}) {
   return (
     <>
-      <View style={styles.basket}>
-        <TextRegular style={styles.name}>Cesta de Verduras</TextRegular>
-        <View style={styles.farm}>
-          <Image source={farm} style={styles.farmImg} />
-          <TextRegular style={styles.farmName}>Jenny Jack Farm</TextRegular>
-        </View>
-        <TextRegular style={styles.description}>
-          Uma cesta com produtos selecionados diretamente da fazenda para sua
-          cozinha.
-        </TextRegular>
-        <TextRegular style={styles.price}>R$ 40,00</TextRegular>
+      <TextRegular style={styles.name}>{name}</TextRegular>
+      <View style={styles.farm}>
+        <Image source={farmLogo} style={styles.farmImg} />
+        <TextRegular style={styles.farmName}>{farmName} </TextRegular>
       </View>
+      <TextRegular style={styles.description}>{description}</TextRegular>
+      <TextRegular style={styles.price}>{price}</TextRegular>
+
+      <TouchableOpacity style={styles.button}>
+        <TextRegular style={styles.textButton}>{buttonText}</TextRegular>
+      </TouchableOpacity>
     </>
   );
 }
@@ -29,10 +33,6 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: "bold",
     lineHeight: 42,
-  },
-  basket: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
   },
   farm: {
     flexDirection: "row",
@@ -58,5 +58,18 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     lineHeight: 42,
     marginTop: 8,
+  },
+  button: {
+    backgroundColor: "#2a9f85",
+    borderRadius: 6,
+    marginTop: 16,
+    paddingVertical: 16,
+  },
+  textButton: {
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "bold",
+    lineHeight: 16,
+    textAlign: "center",
   },
 });

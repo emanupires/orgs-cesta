@@ -6,11 +6,11 @@ import TextRegular from "../../../components/TextRegular";
 
 const width = Dimensions.get("screen").width;
 
-export default function Header() {
+export default function Header({ title }) {
   return (
     <>
       <Image source={header} style={styles.header} />
-      <TextRegular style={styles.title}>Detalhes da cesta</TextRegular>
+      <TextRegular style={styles.title}>{title}</TextRegular>
     </>
   );
 }
